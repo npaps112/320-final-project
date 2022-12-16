@@ -1,0 +1,66 @@
+Motivation
+
+The NFL was founded in Canton, Ohio in 1920. While it has been around for over a century, the "Superbowl Era" has been around for about half that time. 
+The 56th superbowl occurred just this year in February. The superbowl in particular, is amongst America's top viewed TV broadcasts nearing 100 million viewers each 
+year at thise point in time. Additionally, the NFL is the most viewed sport in America. For more general information about the NFL view the following 
+(https://www.ducksters.com/sports/national_football_league.php). NFL teams can end up making 10 million dollars from ticket sales alone when they sell out games. 
+Imagine how much more they make for steeper ticket sales and higher viewed games in the playoffs. Revenue is additionally generated through sponsoring. 
+The rights to the Rams and Raiders stadium name (So-Fi stadium or Allegiant stadium respectively) are both valued at over 20 million dollars. 
+Sponsoring is also seen through the forms of advertisements in the stadium and on TV. It is also worth noting the gambling world is deeply interested in the NFL as
+(https://easyreadernews.com/nfl-economics-how-do-nfl-teams-make-money/#:~:text=Using%20the%20averages%2C%20NFL%20teams,may%20drastically%20reduce%20the%20profit).
+Ignoring the fact that sports teams inherently want to win for the sense of accomplishment and competition, a team in general is greatly vested in performance
+from a profit perspective. Not only is success going to increase viewership and ticket sales, but it allows more games to be played in the playoffs which subsequently
+generates more. Whether it's for competitive reasons, profit-oriented thinking, or a mix of the two, it is clear why every team should be motivated to make it 
+to the superbowl, the highest level of competition within the sport. 
+
+NFL teams are allowed 48 active players on their roster. Given that the NFL has a salary cap, teams must budget their resources while still fielding an entire team.
+Because of this, it is important for teams to decide which factors are most important to consider and apply when fielding a team and making a playbook with the goal in mind
+making it to the Super Bowl. It is my interest in making a decision-tree regression algorithm while using 10 fold cross validation. This algorithm would 
+be meant to predict the winner of a given conference at the time of the end of the regular season. Before getting into the code at all, I am going
+to set out the remaining necessary context.
+
+There are currently 32 teams in the NFL, although some teams have been added since the superbowl era. Recently, the number of teams admitted to the 
+playoffs increased from 6 to 7 for each conference. Currently, there are two conferences: the National Football Conference (NFC) and the American Football 
+Conference (AFC). However, over the course of the first 5 superbowls it was the National Football League (NFL) and American Football League (AFL).
+The approach to making my algorithm is crucial because it is done in a way where these changes to the league are not complications in my data analysis.
+Since I am isolating my analysis to any team's chance to win their own conference, the name of their conference is irrelevant. The idea is that each team 
+would be evaluated and compared to the 5 or 6 other teams they are competing against within their conference. Since I will be ranking each playoff team's chance of
+winning their conference, the fact that 6 or 7 teams may be in a conference playoff is inconsequential as an extra team in the playoff just means there is one 
+more team that could be ranked above any other given team. This accounts for the disparity of more competition in the playoffs. This algorithm is meant to use 
+league data from the regular season to rank each playoff team within their conference. The regular season data will be viewed in the lens of comparing a team's
+data against that of other teams in their playoff conference as well as that of the whole league. This distinction is important because instead of blandly 
+examining a team's regular season performance and data, it is done in both the context of the whole league that year and the specific teams that are 
+being pitted against each other. The specific data that will be viewed includes offensive, defensive, special teams, and winning/losing/tying data.
+
+
+Since there have been 56 superbowls that means there have been 112 conference champions for the two conferences in the league at any time. Looking at 
+the following link, one could view which team won and lost any given superbowl (the two champions of the two conferences that year), which division teams are
+in, the names of all the current teams, and other general league information and history (https://www.britannica.com/topic/National-Football-League). 
+
+The regular season data I scraped comes from THIS WEBSITE (). Since this data includes the playoff 
+
+
+
+
+
+
+
+
+Understanding
+
+
+
+
+Resources
+
+
+
+
+Pipeline (stages)
+
+
+
+
+General Prose
+
+
