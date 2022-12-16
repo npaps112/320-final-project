@@ -19,7 +19,11 @@ making it to the Super Bowl. It is my interest in making a decision-tree regress
 be meant to predict the winner of a given conference at the time of the end of the regular season. Before getting into the code at all, I am going
 to set out the remaining necessary context.
 
-There are currently 32 teams in the NFL, although some teams have been added since the superbowl era. Recently, the number of teams admitted to the 
+There are currently 32 teams in the NFL, although some teams have been added since the superbowl era. In my program, I only look at years the team has existed.
+I do not need to account for when teams move from city to city like I do for them being created in the firstplace even though that has happened throughout the course
+of history as well.
+
+Recently, the number of teams admitted to the 
 playoffs increased from 6 to 7 for each conference. Currently, there are two conferences: the National Football Conference (NFC) and the American Football 
 Conference (AFC). However, over the course of the first 5 superbowls it was the National Football League (NFL) and American Football League (AFL).
 The approach to making my algorithm is crucial because it is done in a way where these changes to the league are not complications in my data analysis.
@@ -37,7 +41,11 @@ Since there have been 56 superbowls that means there have been 112 conference ch
 the following link, one could view which team won and lost any given superbowl (the two champions of the two conferences that year), which division teams are
 in, the names of all the current teams, and other general league information and history (https://www.britannica.com/topic/National-Football-League). 
 
-The regular season data I scraped comes from THIS WEBSITE (). Since this data includes the playoff 
+The regular season data I scraped comes from THIS WEBSITE (). Since this data includes the playoffs 
+
+WEBSITE BLOCKED ME
+
+
 
 
 
