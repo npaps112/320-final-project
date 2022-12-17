@@ -15,7 +15,7 @@ to the superbowl, the highest level of competition within the sport.
 
 NFL teams are allowed 48 active players on their roster. Given that the NFL has a salary cap, teams must budget their resources while still fielding an entire team.
 Because of this, it is important for teams to decide which factors are most important to consider and apply when fielding a team and making a playbook with the goal in mind
-making it to the Super Bowl. It is my interest in making a decision-tree regression algorithm while using 10 fold cross validation. This algorithm would 
+making it to the Super Bowl. It is my interest in making a addaboost classification algorithm while using 10 fold cross validation. This algorithm would 
 be meant to predict the winner of a given conference at the time of the end of the regular season. Before getting into the code at all, I am going
 to set out the remaining necessary context.
 
@@ -41,9 +41,48 @@ Since there have been 56 superbowls that means there have been 112 conference ch
 the following link, one could view which team won and lost any given superbowl (the two champions of the two conferences that year), which division teams are
 in, the names of all the current teams, and other general league information and history (https://www.britannica.com/topic/National-Football-League). 
 
-The regular season data I scraped comes from THIS WEBSITE (). Since this data includes the playoffs 
+The regular season data I scraped comes from pro football reference (https://www.pro-football-reference.com/teams/). This resource was very useful as it
+is not missing data and extends back to the superbowl era. Given the URL's for all the pages I need were the same with just different years or team signatures,
+it was not too difficult to accumulate all the team data by year into one table for the whole league.
 
-WEBSITE BLOCKED ME
+One major setback I had was I kept trying to access the data from these variations of URLs from the same website too much and too fast. This caused access 
+denied warnings to show up in the HTML output my requests were seeing. As it turned out, my bot-like activity, pulling the same exact URL over and over
+again while I was testing and playing around, led me to getting temporarily blocked from accessing their data tables. The organization that notified me of this blockage
+was cloudfare, feel free to check them out and what they do (https://www.cloudflare.com/#:~:text=Cloudflare%20is%20a%20global%20network,runs%20on%20the%20network%20edge.).
+I highly recomend being smart about one's approach to the data science pipeline as to avoid frustrating road blocks such as this. 
+While I may not have been maliscious, it is cool that there are systems protecting from things such as that. This contributed to the largest delay in my project
+as it took many many attemps to get a sufficiently large data set by years while still having each year be complete of its data. Ultimately, I decided to have
+7 second sleep calls between URL pulls. I also decided to only scrape the past 20 years of super bowl data, as anything greater always seemed to result in complications.
+
+Conveniently enough, on the same page where I got team's regular season data, another table with their schedule provided me with indicators of if they made
+the playoffs, if they won their conference, if they were runner up, etc. This was extremely useful as I did not need to incorporate another dataset, yet I could
+interpret the information already present in the pages I was pulling information from year to year. I saved the past 20 years to a CSV as to not let this problem 
+arise again. While it may not be as preferable as having 36 more years of superbowl data, there is some nice upside to my adjusted approach now.
+Since it is only in the past 20 years, each team has been around for the entire span of my scope. Additionally, more recent data is expected to be more
+relevant to the league today.
+
+As an NFL coach looking at these graphs I would prioritize the following: Points allowed/scored and rushing yards/attempt or allowed per attempt. 
+That being said, as a gambler, I would definitely pick a team at the top
+of their playoff bracket in the same statistics to win their conference. While the data is very interesting to look at, isn't it time we build our
+algorithm? While the end goal is to predict teams against each other in the playoff conference, who would be the best, I realize it would be better in the meantime to save 
+the comparisons. For now the teams will just be examined on their successes and statistics alone, and the testing portion of the process would be when 
+comparisons are made. These charts may be useful, but not as useful as my algorithm aspires to be. 
+
+My program effectively is meant to train to historical data so that it can be predictive of testing data or future playoff contensions. 
+Classification models are made to examine a certain entry and make a list of scores based off of that metric, and that playoff team's success.
+10 fold cross validation is used to have 10 different combination of 9 training data points and a unique testing point each time.
+For more resources explaining classifcation models use the following resource (https://www.activestate.com/resources/quick-reads/how-to-classify-data-in-python/). 
+To learn more about k fold cross validation look here (https://www.kdnuggets.com/2022/07/kfold-cross-validation.html).
+
+I built a total of 3 adaboost algorithms. One trained to points allowed and points for with 10 fold cross validation. This one had a mean score of .668 which
+is decent as a predicting metric but not great. It did better than the other set trained to rush yards/game and rush yards allowed/game which had only a score
+of .586. Even better, when we compared the two analysises in a t test, the points set was found to be significantly greater as a predicting metric, rejecting the
+Null hypothesis that points scored/allowed is not a better metric than rush yards/ attempt allowed and earned. One of the craziest parts to me, is that when
+combining all 4 statistics, an average score of .66 is produced which crazily enough is less strong than looking at points for/against alone.
+
+A lot was learned from this process. More data does not necessarily mean the data is better or useful. Programming in these concepts is definitely a lot more
+thought provoking and interactive than simply discussing them. There are so many endless possibilities with data science and as long as you follow a logical
+thought and reliable data, there is always something waiting to be found.
 
 
 
@@ -54,21 +93,14 @@ WEBSITE BLOCKED ME
 
 
 
-Understanding
 
 
 
 
-Resources
 
 
 
 
-Pipeline (stages)
 
-
-
-
-General Prose
 
 
